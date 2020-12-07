@@ -74,6 +74,6 @@ console.log(m);
 
 let binary = m.emitBinary();
 
-fs.writeFileSync(process.argv[2]+"hint.wasm", binary);
+fs.writeFileSync(process.argv[3], binary);
 
 
