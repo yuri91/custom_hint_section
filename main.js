@@ -10,7 +10,7 @@ const getBranches = (id, out) => {
 	if(id==0)
 		return;
 	const expr = b.getExpressionInfo(id);
-	if (expr.id==b.BrIfId||expr.id==b.IfId) {
+	if (expr.id==b.BreakId||expr.id==b.IfId) {
 		out.push(expr);
 	}
 	switch(expr.id) {
