@@ -58,7 +58,7 @@ for (let [fidx, fentry] of info.entries()) {
 	append(data, u32toULEB(fidx));
 	append(data, u32toULEB(fentry.length));
 	for (let [idx, entry] of fentry.entries()) {
-		append(data, u32toULEB(1));
+		append(data, u32toULEB(entry.id == b.IfId ? 1 : 2));
 	}
 }
 
