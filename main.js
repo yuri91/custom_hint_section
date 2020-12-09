@@ -52,9 +52,6 @@ const append = (arr1, arr2) => {
 }
 const data = [];
 
-const numFuncs = info.length;
-append(data, u32toULEB(numFuncs));
-
 for (let [fidx, fentry] of info.entries()) {
 	if(fentry.length==0)
 		continue;
