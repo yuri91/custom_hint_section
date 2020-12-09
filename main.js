@@ -39,7 +39,6 @@ for (let i = 0; i < m.getNumFunctions(); i++) {
 	const bodyId = b.getFunctionInfo(f).body;
 	getBranches(bodyId, out);
 	info.push(out);
-	console.log(out);
 }
 
 
@@ -69,8 +68,6 @@ for (let [fidx, fentry] of info.entries()) {
 const section = new Uint8Array(data);
 
 m.addCustomSection("branchHints", section);
-
-console.log(m);
 
 let binary = m.emitBinary();
 
