@@ -4,11 +4,10 @@ Adds a custom `branchHints` section to a wasm module, setting all `if`s to likel
 
 For the section to be useful, you need a patched version of V8: https://github.com/yuri91/v8/tree/custom_section
 
-See https://github.com/WebAssembly/branch-hinting/issues/1 for more infos.
+See https://github.com/WebAssembly/branch-hinting/ for more infos on the branch hinting proposal
 
 ## Usage
 
 ```
-npm install
-node main.js test.wasm test_hinted.wasm
+cargo run test.wasm test_hint.wasm
 ```

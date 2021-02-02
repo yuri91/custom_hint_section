@@ -1,0 +1,12 @@
+[package]
+name = "custom_hint_section"
+version = "0.1.0"
+authors = ["Yuri Iozzelli <y.iozzelli@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wasmparser = "0.73.0"
+leb128 = "0.2.4"
+anyhow = "1.0.38"
