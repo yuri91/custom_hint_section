@@ -30,11 +30,12 @@ impl BranchHintsSection {
         let name = b"branchHints";
         leb128::write::unsigned(&mut data, name.len() as u64).unwrap();
         data.extend(name);
+        leb128::write::unsigned(&mut data, self.funcs.len() as u64).unwrap();
         for f in &self.funcs {
             leb128::write::unsigned(&mut data, f.func as u64).unwrap();
+            leb128::write::unsigned(&mut data, 0u64).unwrap();
             leb128::write::unsigned(&mut data, f.branches.len() as u64).unwrap();
             for i in &f.branches {
-                leb128::write::unsigned(&mut data, i.offset as u64).unwrap();
                 let direction = match i.dir {
                     HintDirection::False => {
                         0
@@ -44,6 +45,7 @@ impl BranchHintsSection {
                     }
                 };
                 leb128::write::unsigned(&mut data, direction).unwrap();
+                leb128::write::unsigned(&mut data, i.offset as u64).unwrap();
             }
         }
         let mut payload = Vec::new();
